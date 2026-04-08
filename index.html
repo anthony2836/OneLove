@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OneLove: Bar de tapas y cócteles de autor en el corazón de Madrid. Sabores únicos, ambiente sofisticado y energía auténtica.">
+    <title>OneLove </title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+    <script src="assets/js/scripts.js" defer></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body class="loading">
+
+    <div id="preloader" aria-hidden="true">
+        <div class="loader-content">
+            <div class="loader-logo">OneLove.</div>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <nav id="navbar" aria-label="Navegación principal">
+        <div class="nav-container">
+            <a href="#inicio" class="logo" aria-label="Ir al inicio">OneLove<span class="dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="#esencia" class="nav-item">Esencia</a></li>
+                <li><a href="#recomendaciones" class="nav-item">Recomendaciones</a></li>
+                <li><a href="#ubicacion" class="nav-item">Ubicación</a></li>
+                <li><a href="#ambiente" class="nav-item">Galería</a></li>
+                <li><a href="#reservas" class="nav-btn-gold">Reservar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero">
+        <div class="hero-content reveal">
+            <h1>Cócteles, Cerveza & Tapas</h1>
+            <p>Sabores únicos. Energía auténtica. Una noche diferente.</p>
+            <a href="#reservas" class="btn-gold">Vive la Experiencia</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </header>
+
+    <section id="esencia" class="section-padding">
+        <div class="container essences-grid">
+            <div class="essence-text reveal">
+                 <h2 class="section-title left">Esencia One Love</h2>
+                <p>OneLove no es solo un bar.Es es una vibra.</p> 
+                <p>Luces bajas, re flejos dorados y el ritmo del raggae marcando el ambiente.Cada rincón esta pensado 
+                    para que desconectes, te suentes y vivas el moento sin prisas.</p>
+                <p>Aquí el sabor, la musica y la energia se mezclan para crear algo diferente.</p>
+                <p>One Love es noche, actitud y experiencia en estado puro energia, sabor y noche en estado puro. </p>
+               </div>
+            <div class="essence-image reveal">
+                <img src="assets/img/local.png" alt="Interior OneLove" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+<section id="recomendaciones" class="section-padding bg-surface">
+    <div class="container">
+        <h2 class="section-title reveal">Recomendaciones del local</h2>
+        
+        <div class="menu-tabs reveal" role="tablist" aria-label="Categorías del menú">
+            <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="cocteles" id="tab-cocteles" data-target="cocteles">Cócteles</button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tapas-entrantes" id="tab-tapas" data-target="tapas-entrantes">Entrantes</button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="platos" id="tab-platos" data-target="platos">Principales</button>
+        </div>
+
+        <div class="tab-content active" id="cocteles" role="tabpanel" aria-labelledby="tab-cocteles">
+            <div class="menu-grid">
+                <button class="menu-card reveal" data-product-id="rum-punch">
+                    <img src="assets/img/Jamaican Rum Punch3.png" alt="Jamaican Rum Punch">
+                    <div class="card-body">
+                        <h3>Jamaican Rum Punch</h3>
+                        <p>Ron Overproof y zumos tropicales.</p>
+                        <span class="view-details gold-text">Ver detalles</span>
+                    </div>
+                </button>
+                <button class="menu-card reveal" data-product-id="marley-spirit">
+                    <img src="assets/img/Marley Spirit .png" alt="Marley Spirit">
+                    <div class="card-body">
+                        <h3>Marley Spirit</h3>
+                        <p>Capas de sabor con los colores de la isla.</p>
+                        <span class="view-details gold-text">Ver detalles</span>
+                    </div>
+                </button>
+                <button class="menu-card reveal" data-product-id="blue-mountain">
+                    <img src="assets/img/Blue Mountain Martini .png" alt="Blue Mountain Martini">
+                    <div class="card-body">
+                        <h3>Blue Mountain Martini</h3>
+                        <p>Café premium y vodka artesanal.</p>
+                        <span class="view-details gold-text">Ver detalles</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tapas-entrantes" role="tabpanel" aria-labelledby="tab-tapas" hidden>
+            <div class="menu-grid">
+                <button class="menu-card" data-product-id="beef-patty">
+                    <img src="assets/img/Jamaican Beef Patty.png" alt="Jamaican Beef Patty">
+                    <div class="card-body">
+                        <h3>Jamaican Beef Patty</h3>
+                        <p>Empanadilla clásica de carne especiada.</p>
+                        <span class="view-details gold-text">Ver detalles</span>
+                    </div>
+                </button>
+                <button class="menu-card" data-product-id="stamp-go">
+                    <img src="assets/img/stamp and go .png" alt="Stamp and Go">
+                    <div class="card-body">
+                        <h3>Stamp & Go</h3>
+                        <p>Buñuelos de bacalao crujientes con scotch bonnet.</p>
+                        <span class="view-details gold-text">Ver detalles</span>
+                    </div>
+                </button>
+                <button class="menu-card" data-product-id="plantain-cups">
+                    <img src="assets/img/Plantain Cups .webp" alt="Tostones rellenos">
+                    <div class="card-body">
+                        <h3>Plantain Cups</h3>
+                        <p>Cestas de plátano frito rellenas de gambas.</p>
+                        <span class="view-details gold-text">Ver detalles</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="platos" role="tabpanel" aria-labelledby="tab-platos" hidden>
+            <div class="menu-grid">
+                <button class="menu-card" data-product-id="jerk-chicken">
+                    <img src="assets/img/Classic Jerk Chicken.png" alt="Pollo Jerk">
+                    <div class="card-body">
+                        <h3>Classic Jerk Chicken</h3>
+                        <p>Asado a la parrilla con especias tradicionales.</p>
+                        <span class="view-details gold-text">Ver detalles</span>
+                    </div>
+                </button>
+                <button class="menu-card" data-product-id="curry-goat">
+                    <img src="assets/img/Jamaican Curry Goat.jpeg" alt="Curry Goat">
+                    <div class="card-body">
+                        <h3>Jamaican Curry Goat</h3>
+                        <p>Cabra tierna cocinada a fuego lento en curry.</p>
+                        <span class="view-details gold-text">Ver detalles</span>
+                    </div>
+                </button>
+                <button class="menu-card" data-product-id="ackee-saltfish">
+                    <img src="assets/img/Ackee and Saltfish.png" alt="Ackee and Saltfish">
+                    <div class="card-body">
+                        <h3>Ackee & Saltfish</h3>
+                        <p>El plato nacional: fruta ackee y bacalao.</p>
+                        <span class="view-details gold-text">Ver detalles</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <aside id="product-drawer" class="drawer" aria-hidden="true" role="dialog" aria-labelledby="drawer-title">
+        <div class="drawer-overlay" data-close-drawer></div>
+        <div class="drawer-content">
+            <button class="close-drawer" data-close-drawer aria-label="Cerrar detalles">&times;</button>
+            <div class="drawer-body">
+                <img id="drawer-img" src="" alt="" class="drawer-image">
+                <div class="drawer-text">
+                    <h2 id="drawer-title" class="drawer-titlePlayfair"></h2>
+                    <p id="drawer-description" class="drawer-description"></p>
+                    <div class="drawer-meta">
+                        <span class="gold-text">Categoría:</span> <span id="drawer-category"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+<section id="ubicacion" class="section-padding bg-surface">
+        <div class="container">
+            <div class="location-grid">
+                <div class="location-info reveal">
+                    <h2 class="section-title left">Dónde Encontrarnos</h2>
+                    <p class="location-desc">En pleno corazón de Madrid, nuestro santuario te espera. Un espacio diseñado para desconectar del bullicio y sumergirte en la auténtica experiencia OneLove.</p>
+                    
+                    <div class="info-blocks">
+                        <div class="info-item">
+                            <h3 class="gold-text">Dirección</h3>
+                            <p>Calle Buenavista, 14<br>28012 Madrid, España</p>
+                        </div>
+                        <div class="info-item">
+                            <h3 class="gold-text">Horario</h3>
+                            <p>Lunes a Viernes<br>13:00 - 02:00</p>
+                            <p>Sábado y Domingo<br>14:00 - 03:00</p>
+
+                         </div>
+                        <div class="info-item">
+                            <h3 class="gold-text">Contacto</h3>
+                            <p><a href="tel:+34600987654" class="hover-gold">+34 677 11 11 74</a><br><a href="mailto:reservas@onelovebar.com" class="hover-gold">reservas@onelovebar.com</a></p>
+                        </div>
+                    </div>
+                 </div>
+                
+                <div class="location-map reveal">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.9678129377484!2d-3.7018314!3d40.4095944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42262ccce77779%3A0x992aa7681b666f66!2sC.%20de%20Buenavista%2C%2014%2C%20Centro%2C%2028012%20Madrid!5e0!3m2!1ses!2ses!4v1712490000000!5m2!1ses!2ses" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Mapa de ubicación de One Love Madrid">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ambiente" class="section-padding bg-darker">
+        <div class="container">
+            <h2 class="section-title reveal">Un Vistazo a OneLove</h2>
+            <div class="carousel-container reveal">
+                <div class="carousel-track">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&q=80" alt="Barra del Bar" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&q=80" alt="Mesa elegante" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=800&q=80" alt="Ambiente Lounge" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1538332576228-eb5b4c4de6f5?w=800&q=80" alt="Detalle Luces" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&q=80" alt="Barra del Bar" loading="lazy" aria-hidden="true">
+                    <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&q=80" alt="Mesa elegante" loading="lazy" aria-hidden="true">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reservas" class="section-padding bg-surface">
+        <div class="container container-small">
+             <h2 class="reserva-title">Haz tu Reserva</h2>
+            <p class="section-intro text-center reveal">Garantiza tu experiencia en OneLove. Completa el formulario y confirmaremos tu reserva en breve.</p>
+            
+            <form id="reservaForm" class="reserva-form reveal">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email de Contacto</label>
+                        <input type="email" id="email" name="email"  required>
+                    </div>
+                </div>
+
+                <div class="form-row form-row-triple">
+                    <div class="form-group">
+                        <label for="fecha">Fecha</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hora">Hora</label>
+                        <input type="time" id="hora" name="hora" min="13:00" max="23:00" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="personas">Personas</label>
+                        <input type="number" id="personas" name="personas" min="1" max="10" placeholder="2" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono </label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="+34 ">
+                </div>
+
+                <div class="form-group">
+                    <label for="observaciones">Observaciones (Alergias, peticiones...)</label>
+                    <textarea id="observaciones" name="observaciones" rows="3" placeholder="Ej. Alergia a los frutos secos..."></textarea>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn-gold-fill">Confirmar Reserva</button>
+                </div>
+            </form>
+            <div id="form-message" class="form-message" hidden></div>
+        </div>
+    </section>
+
+<footer class="footer bg-darker" aria-label="Pie de página" itemscope itemtype="https://schema.org/BarOrPub">
+    <div class="container footer__grid">
+        
+        <div class="footer__brand">
+            <h2 class="logo" itemprop="name">OneLove<span class="gold-text" aria-hidden="true">.</span></h2>
+            <p class="footer__tagline">Sabores únicos. Energía auténtica. Una noche diferente.</p>
+            </div>
+
+        <div class="footer__contact">
+            <h3 class="visually-hidden">Contacto</h3>
+            <ul class="footer__list" role="list">
+                <li>
+                    <span class="gold-text font-weight-bold">Tel:</span> 
+                    <a href="tel:+34600987654" itemprop="telephone" aria-label="Llamar al teléfono +34 600 987 654">
+                        +34 600 987 654
+                    </a>
+                </li>
+                <li>
+                    <span class="gold-text font-weight-bold">Email:</span> 
+                    <a href="mailto:reservas@onelovebar.com" itemprop="email" aria-label="Enviar un correo electrónico a reservas">
+                        reservas@onelovebar.com
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer__location">
+            <h3 class="visually-hidden">Ubicación y Horario</h3>
+            
+            <address class="footer__address" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                <span itemprop="streetAddress">Calle Buenavista, 14</span><br>
+                <span itemprop="postalCode">28012</span> <span itemprop="addressLocality">Madrid</span>, <span itemprop="addressCountry">España</span>
+            </address>
+
+            <div class="footer__schedule">
+                <dl>
+                    <dt class="gold-text">Lunes a Viernes</dt>
+                    <dd><time itemprop="openingHours" datetime="Mo-Fr 13:00-02:00">13:00 - 02:00</time></dd>
+                    
+                    <dt class="gold-text">Sábado y Domingo</dt>
+                    <dd><time itemprop="openingHours" datetime="Sa-Su 14:00-03:00">14:00 - 03:00</time></dd>
+                </dl>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="footer__bottom">
+        <div class="container footer__bottom-flex">
+            <p class="footer__copy">
+                &copy; <time datetime="2026">2026</time> OneLove Tapas Bar. Todos los derechos reservados.
+            </p>
+            <ul class="footer__legal-links" role="list">
+                <li><a href="index.html">Política de Privacidad</a></li>
+                <li><a href="index.html">Política de Cookies</a></li>
+            </ul>
+        </div>
+    </div>
+
+</footer>
+<!-- WHATSAPP -->
+<a href="https://wa.me/34677111174" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- EMAIL -->
+<a href="mailto:reservas@onelovebar.com" class="email-float">
+    <i class="fas fa-envelope"></i>
+</a>
+</body>
+</html>
